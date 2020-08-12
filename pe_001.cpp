@@ -12,6 +12,7 @@ int main() {
     const int ROOTS[2] = {3,5};
     int num =0, sum = 0;
 
+    //attempt 1
     for(int i=0; i<2; i++) {
         num = 0;
         while(num < CAP) {
@@ -22,4 +23,17 @@ int main() {
     }
 
     std::cout<< sum <<std::endl;
+
+    //attempt 2
+    sum = 0;
+    int n;
+    const int LEN = sizeof(ROOTS)/sizeof(ROOTS[0]);
+    for(int i=0; i<LEN; i++) {
+        int n = (CAP-1)/ROOTS[i];
+        sum += (int)(ROOTS[i] * (n/2.0) * (n+1));
+    }
+    n = (CAP-1) / (ROOTS[0]*ROOTS[1]);
+    sum -= (int)((ROOTS[0]*ROOTS[1]) * (n/2.0) * (n+1));
+    std::cout<< sum <<std::endl;
+
 }
