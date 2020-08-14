@@ -13,8 +13,12 @@ int main() {
 
     while (i1 < CAP) {
         sum += i1;
-        
+        i1 = i2 + i3;
+        i2 = i1 + i3;
+        i3 = i1 + i2;
     }
     
+    std::cout<<sum<<std::endl;
+
     return 0;
 }
