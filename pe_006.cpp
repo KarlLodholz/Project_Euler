@@ -6,9 +6,11 @@ Find the difference between the sum of the squares of the first one hundred natu
 /*/
 
 int main() {
-    long long int sum = 0, n = 100;
+    long long int sum = 0;
+    const int n = 100;
     //attempt1 
     {
+        Timer t;
         sum = (n*(n+1)/2)*(n*(n+1)/2) - (n*(n+1)*(2*n+1)/6);
     }
     std::cout<<sum<<std::endl;
