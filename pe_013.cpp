@@ -112,6 +112,7 @@ int main() {
 
     //attempt1 
     {
+        long temp;
         Timer t;  
         const std::string n[] =   { "37107287533902102798797998220837590246510135740250",
                                     "46376937677490009712648124896970078050417018260538",
@@ -213,11 +214,17 @@ int main() {
                                     "72107838435069186155435662884062257473692284509516",
                                     "20849603980134001723930671666823555245252804609722",
                                     "53503534226472524250874054075591789781264330331690" };
-        for (int i = 0; i < DIGITS; i++)
-            for(int j = 0; j < 100; j++) 
-                sum += (n[j][49-i]-48)*pow(10,i);
-        
-        sum = sum % int(pow(10,DIGITS));
+        for (int i = 0; i < DIGITS+2; i++) {
+            temp = 0;
+            for(int j = 0; j < 100; j++) {
+                temp += (n[j][i]-48);
+                //std::cout<<(n[j][i]-48)<<std::endl;
+            }
+            sum += temp * pow(10,DIGITS+2-i);
+            std::cout<<sum<<std::endl;
+
+        }
+        sum = sum / long(pow(10,5));
     }
     std::cout<< sum <<std::endl;
     return 0;
