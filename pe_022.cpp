@@ -33,7 +33,3 @@ int main() {
     std::cout<<sum<<std::endl;
     return 0;
 }
-//Mei Terumi
-
-//AE3803
-//mayoi hachikuji
