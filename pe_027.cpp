@@ -32,7 +32,7 @@ bool isprime(int num) {
 int main() {
     int product;
     const short CAP = 1000;
-    //attempt1 
+    //attempt1  - bruteforce
     {
         product = 0;
         short max = 0;
